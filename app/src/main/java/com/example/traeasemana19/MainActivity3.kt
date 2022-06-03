@@ -12,11 +12,15 @@ class MainActivity3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
 
+        //Se asigna el cliente de Chrome para poder visualizar una ventana de chrome en el webview
         webnotas.webChromeClient = object : WebChromeClient(){
         }
+        //Se asigna el cliente para visualizar la pagina web
         webnotas.webViewClient = object : WebViewClient(){
         }
+        //Se habilita el JavaScript
         webnotas.settings.javaScriptEnabled = true
+        //Se carga la URL
         webnotas.loadUrl("https://estudiantes.ugb.edu.sv/Notas")
     }
 }

@@ -39,15 +39,16 @@ internal fun updateAppWidget(
     appWidgetId: Int
 ) {
 
+    //Se hace 2 variables las cuales estaran pendientes de habre un intent, uno abre el de canvas
     val canva : PendingIntent = Intent(context,MainActivity2::class.java).let { intent ->
         PendingIntent.getActivity(context, 0, intent, 0)  }
 
-
+    //Y este otro abre el de notas
     val notas : PendingIntent = Intent(context,MainActivity3::class.java).let { intent ->
         PendingIntent.getActivity(context, 0, intent, 0)  }
 
 
-
+    //Aqui se aplica en la vista remota, que se aplique, que los botones esten pendientes al tap para abrir sus activity
     val views = RemoteViews(context.packageName, R.layout.miwidget)
         .apply { setOnClickPendingIntent(R.id.ircanvas,canva)}
         .apply { setOnClickPendingIntent(R.id.irnotas,notas)}

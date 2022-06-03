@@ -12,11 +12,15 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
+        //Se asigna el cliente de Chrome para poder visualizar una ventana de chrome en el webview
         webcanvas.webChromeClient = object : WebChromeClient(){
         }
+        //Se asigna el cliente para visualizar la pagina web
         webcanvas.webViewClient = object : WebViewClient(){
         }
+        //Se habilita el JavaScript
         webcanvas.settings.javaScriptEnabled = true
+        //Se carga la URL
         webcanvas.loadUrl("https://estudiantes.ugb.edu.sv/Home")
     }
 }
